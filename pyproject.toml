@@ -9,7 +9,7 @@ dependencies = [
     "opencv-python-headless",
     "pandas",
     "lightning",
-    "nntools @ git+https://github.com/ClementPla/NNTools@attrs_dataset",
+    "nntools",
     "timm",
 ]
 readme = "README.md"
