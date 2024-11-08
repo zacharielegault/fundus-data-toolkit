@@ -6,36 +6,36 @@ dependencies = [
     "albumentations",
     "appdirs",
     "torch",
-    "torchvision",
     "numpy",
     "opencv-python-headless",
     "pandas",
+    "lightning",
     "matplotlib",
-    "scikit-learn",
-    "scipy",
-    "tqdm",
-    "pytorch-lightning",
     "nntools @ git+https://github.com/ClementPla/NNTools@attrs_dataset",
-    "attrs",
     "timm",
-    "wandb",
-    "jaxtyping",
 ]
 readme = "README.md"
 
 [project.optional-dependencies]
-dev = ["black", "ruff", "pre-commit"]
-
 notebook = ["ipykernel", "matplotlib"]
 
-[tool.black]
-line-length = 120
-
-[tool.ruff]
-line-length = 120
-select = ["E", "F", "I", "RUF", "TCH"]
-fixable = ["I", "RUF100", "TCH"]
-fix = true
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.hatch.metadata]
 allow-direct-references = true
+
+[tool.rye]
+managed = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+fix = true
+select = ["E", "F", "I", "RUF", "TCH"]
+fixable = ["I", "RUF100", "TCH"]
+
+[tool.ruff.format]
+docstring-code-format = true

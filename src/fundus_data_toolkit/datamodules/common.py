@@ -7,15 +7,15 @@ import albumentations as A
 import cv2
 import torch
 from albumentations.pytorch.transforms import ToTensorV2
-from nntools.dataset.composer import Composition
-from nntools.dataset.utils.balance import class_weighting
-from nntools.dataset.utils.concat import concat_datasets_if_needed
-from nntools.dataset.utils.ops import random_split
-from pytorch_lightning import LightningDataModule
+from lightning import LightningDataModule
 from torch.utils.data import DataLoader
 
 from fundus_data_toolkit.config import get_normalization
 from fundus_data_toolkit.data_aug import DAType
+from nntools.dataset.composer import Composition
+from nntools.dataset.utils.balance import class_weighting
+from nntools.dataset.utils.concat import concat_datasets_if_needed
+from nntools.dataset.utils.ops import random_split
 
 if TYPE_CHECKING:
     import nntools.dataset as D
